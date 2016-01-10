@@ -1,4 +1,4 @@
-from django.contrib import auth
+from django.contrib.auth import backends
 
 
 class MongoEngineBackend(object):
@@ -9,5 +9,5 @@ class MongoEngineBackend(object):
     supports_anonymous_user = False
     supports_inactive_user = False
 
-    authenticate = auth.backends.ModelBackend.__dict__["authenticate"]
-    get_user = auth.backends.ModelBackend.__dict__["get_user"]
+    authenticate = backends.ModelBackend.__dict__["authenticate"]
+    get_user = backends.ModelBackend.__dict__["get_user"]
